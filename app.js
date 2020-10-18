@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 //connect to cluster
-mongoose.connect("mongodb+srv://admin-christ:adminpassword@cluster0.4ceok.mongodb.net/blogDB", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://admin-christ:"+ process.env.MONGOPW +"@cluster0.4ceok.mongodb.net/blogDB", {useNewUrlParser: true, useUnifiedTopology: true});
 
 let posts = [];
 
